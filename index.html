@@ -125,6 +125,29 @@ label {
     </style>
 </head>
 <body>
+      </style>
+</head>
+<body>
+    <script>
+        // !!! CHANGE THIS TO YOUR SECRET PASSWORD !!!
+        var accessPassword = "NebulaWhisper_Gamma9"; 
+
+        (function promptPass() {
+            var psw = prompt("Enter the Secret Access Code for the Space Design Gallery:");
+            // This loop forces the user to try again if the password is wrong
+            while (psw !== accessPassword) {
+                alert("Incorrect Access Code. Please try again.");
+                // Return and call itself again to re-prompt
+                return promptPass(); 
+            }
+        }());
+        // The script finishes, and the page loads ONLY after the correct password is entered.
+    </script>
+    <div class="container">
+        <div class="header">
+            <button class="lang-switch" onclick="toggleLanguage()">
+                <span id="langText">العربية</span>
+            </button>
     <div class="container">
         <div class="header">
             <button class="lang-switch" onclick="toggleLanguage()">
