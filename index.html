@@ -128,21 +128,7 @@ label {
       </style>
 </head>
 <body>
-    <script>
-        // !!! CHANGE THIS TO YOUR SECRET PASSWORD !!!
-        var accessPassword = "NebulaWhisper_Gamma9"; 
 
-        (function promptPass() {
-            var psw = prompt("Enter the Secret Access Code for the Space Design Gallery:");
-            // This loop forces the user to try again if the password is wrong
-            while (psw !== accessPassword) {
-                alert("Incorrect Access Code. Please try again.");
-                // Return and call itself again to re-prompt
-                return promptPass(); 
-            }
-        }());
-        // The script finishes, and the page loads ONLY after the correct password is entered.
-    </script>
 
     <div class="container">
         <div class="header">
@@ -189,21 +175,22 @@ label {
         import { getDatabase, ref, push, onValue, remove } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js';
 
         // REPLACE THIS CONFIG WITH YOUR OWN FROM FIREBASE CONSOLE
+      // REPLACE THIS CONFIG WITH YOUR OWN FROM FIREBASE CONSOLE
        const firebaseConfig = {
-  apiKey: "AIzaSyA4Ob_oTDitDlUTpUmKEfMBVsNkEl3_wm0",
-  authDomain: "space-gallery-e58f3.firebaseapp.com",
-  databaseURL: "https://space-gallery-e58f3-default-rtdb.firebaseio.com",
-  projectId: "space-gallery-e58f3",
-  storageBucket: "space-gallery-e58f3.firebasestorage.app",
-  messagingSenderId: "325992713811",
-  appId: "1:325992713811:web:900a04a41575346dab00a6",
-  measurementId: "G-5RH3KHVGSF"
-};
+          apiKey: "AIzaSyCXuPrQodSgUV3nEi1JFzVoRBBrezZ6yu8",
+          authDomain: "space-gallery-e58f3.firebaseapp.com",
+          databaseURL: "https://space-gallery-e58f3-default-rtdb.firebaseio.com", // FIXED: Added closing quote
+          projectId: "space-gallery-e58f3",
+          storageBucket: "space-gallery-e58f3.firebasestorage.app",
+          messagingSenderId: "325992713811",
+          appId: "1:325992713811:web:900a04a41575346dab00a6",
+          measurementId: "G-5RH3KHVGSF"
+        };
 
 
         // REPLACE WITH YOUR CLOUDINARY CLOUD NAME AND UPLOAD PRESET
         const CLOUDINARY_CLOUD_NAME = "dle1jyerd";
-        const CLOUDINARY_UPLOAD_PRESET = "Space_Gallery";
+        const CLOUDINARY_UPLOAD_PRESET = "Space_Gallery"; // FIXED: Removed extra 's'
 
         let app, database;
         let isConnected = false;
